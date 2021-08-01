@@ -14,7 +14,7 @@ class LibSkinUtils {
      *
      * Returns skin data required for creating a skin.
      */
-    public static function getSkinDataFromPNG(string $path): string {
+    public static function getSkinDataFromPNG(string $path) : string {
         $image = imagecreatefrompng($path);
         $data = "";
         for($y = 0, $height = imagesy($image); $y < $height; $y++) {
@@ -35,7 +35,7 @@ class LibSkinUtils {
      *
      * Returns a skin object.
      */
-    public static function createSkin(string $skinData) {
+    public static function createSkin(string $skinData) : Skin {
         return new Skin("Standard_Custom", $skinData, "", "geometry.humanoid.custom");
     }
     
