@@ -46,7 +46,7 @@ class LibSkinUtils {
     * Returns true depending on whether or not the skin is a valid size.
     */
     public static function preValidateSkin(string $skinData) : bool {
-        if(in_array(strtlen($skinData), Skin::ACCEPTED_SKIN_SIZES)) {
+        if(in_array(strlen($skinData), Skin::ACCEPTED_SKIN_SIZES)) {
             return true;
         } else {
             return false;
