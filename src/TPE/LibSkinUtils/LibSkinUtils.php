@@ -32,7 +32,7 @@ class LibSkinUtils {
     /**
      * @param string $skinData
      * @param bool $check
-     * @return Skin
+     * @return Skin|null
      *
      * Returns a skin object, null is returned if $check is true and the skin size is invalid.
      */
