@@ -26,7 +26,7 @@ class Example extends Human {
        $path = Main::get()->getDataFolder() . DIRECTORT_SEPERATOR . "example.png"; // example.png represents the example skin.
        $data = LibSkinUtils::getSkinDataFromPng($path); // simply gets the skin data required for skin conversion
        if(LibSkinUtils::preValidateSkin($data)) { // checks if skin is an acceptable size.
-           $this->setSkin(LibSkinUtils::createSkin($data)); // creates a skin object from data
+           $this->setSkin(LibSkinUtils::createSkin($data, false)); // creates a skin object from data, false the second param because the skin has already been validated above.
        } else {
           throw new \Exception("Invalid skin size used!");
        }
