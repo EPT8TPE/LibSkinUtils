@@ -31,11 +31,18 @@ class LibSkinUtils {
 
     /**
      * @param string $skinData
+     * @param bool $check
      * @return Skin
      *
-     * Returns a skin object.
+     * Returns a skin object, null is returned if $check is true and the skin size is invalid.
      */
-    public static function createSkin(string $skinData) : Skin {
+    public static function createSkin(string $skinData, $check = true) : ?Skin {
+        if($check) {
+            if(self::preValidateSkin($skinData)) {
+                return new Skin("Standard_Custom", $skinData, "", "geometry.humanoid.custom");
+            } 
+            return null;
+        }
         return new Skin("Standard_Custom", $skinData, "", "geometry.humanoid.custom");
     }
     
